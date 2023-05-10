@@ -15,15 +15,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# @app.on_event("startup")
-# async def startup_db_client():
-#     app.mongodb_client = AsyncIOMotorClient(DB_URL, tls=True, tlsAllowInvalidCertificates=True)
-#     app.mongodb = app.mongodb_client[DB_NAME]
-
-
-
-# @app.on_event("shutdown")
-# async def shutdown_db_client():
-#     app.mongodb_client.close()
-
 from requestTypes.web.api import api
