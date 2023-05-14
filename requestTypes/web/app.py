@@ -8,11 +8,12 @@ from handler_exceptions import GetRequestTypeNotFoundException, InvalidActionExc
 from fastapi.responses import PlainTextResponse
 from starlette.exceptions import HTTPException as GlobalStarletteHTTPException
 from fastapi.exceptions import RequestValidationError
+from requestTypes.database.database import close_async_db, create_async_db
 
-# setup loggers
-logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
-# get root logger
-logger = logging.getLogger(__name__) 
+# # setup loggers
+# logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
+# # get root logger
+# logger = logging.getLogger(__name__) 
 
 # define origins
 origins = ["*"]
@@ -79,5 +80,13 @@ async def log_transaction_filter(request: Request, call_next):
         reqfile.writelines(content)
     response.headers["X-Time-Elapsed"] = str(process_time)
     return response
+    
+@app.on_event("startup")
+async def startup_db_client():
+  create_async_db()
 
+@app.on_event("shutdown")
+async def shutdown_db_client():
+    close_async_db()
+    
 from requestTypes.web.api import api

@@ -1,10 +1,14 @@
 
-from requestTypes.database.database import get
 from requestTypes.repository.exceptions import RequestTypeNotFoundError
-from requestTypes.database.models import GetRequestsTypesModel
+from requestTypes.repository.models import GetRequestsTypesModel
 
-async def get_request_types()->GetRequestsTypesModel:
-    respnse = await get()
-    if respnse is not None:
-            return respnse
-    raise RequestTypeNotFoundError('Requests where not found')
+class requestTypesRepository: 
+    def __init__(self, dbCollection):
+             self.dbCollection = dbCollection
+
+    async def get_request_types(self)->GetRequestsTypesModel:
+        cursor = self.dbCollection.find()
+        respnse = await cursor.to_list(length=None)
+        if respnse is not None:
+                return respnse
+        raise RequestTypeNotFoundError('Requests where not found')
