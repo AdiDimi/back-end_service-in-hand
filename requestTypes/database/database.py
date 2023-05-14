@@ -1,7 +1,7 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from decouple import config
 from requestTypes.repository.exceptions import RequestTypeNotFoundError
-from requestTypes.repository.models import GetRequestsTypesModel
+from requestTypes.database.models import GetRequestsTypesModel
 from requestTypes.web.app import app
 
 DB_URL = config("DB_URL", cast=str)

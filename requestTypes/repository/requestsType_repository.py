@@ -1,7 +1,7 @@
 
 from requestTypes.database.database import get
 from requestTypes.repository.exceptions import RequestTypeNotFoundError
-from requestTypes.repository.models import GetRequestsTypesModel
+from requestTypes.database.models import GetRequestsTypesModel
 
 async def get_request_types()->GetRequestsTypesModel:
     respnse = await get()
