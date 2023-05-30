@@ -9,7 +9,7 @@ from weekOpening.repository.exceptions import RequestTypeNotFoundError
 from weekOpening.repository.weekOpening_repository import weekOpeningRepository
 from weekOpening.web.weekOpening_app import app
 from weekOpening.web.api.schemas import (
-    CreateWeekOpeningUnitsSchema,
+    CreateWeekOpeningsSchema,
 )
 
 # from dependency_injector.wiring import inject, Provide
@@ -19,7 +19,7 @@ from weekOpening.web.api.schemas import (
 @app.get(
     "/weekOpenings",
     status_code=status.HTTP_200_OK,
-    response_model=CreateWeekOpeningUnitsSchema,
+    response_model=CreateWeekOpeningsSchema,
 )
 # @inject
 async def get_weekOpenings(dbCollection=Depends(create_db_collections)):
@@ -28,7 +28,7 @@ async def get_weekOpenings(dbCollection=Depends(create_db_collections)):
         repo: weekOpeningRepository = weekOpeningRepository(dbCollection)
         respnse = await repo.get_week_opening()
         if respnse is not None:
-            return {"unitWeekOpenings": respnse}
+            return respnse
     except RequestTypeNotFoundError:
         raise GetRequestTypeNotFoundException(
             status_code=404, detail=f"Requests where not found"

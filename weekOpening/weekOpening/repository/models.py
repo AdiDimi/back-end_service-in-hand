@@ -82,10 +82,11 @@ class GetWeekOpeningUnitModel(CreateWeekOpeningsModel):
         }
 
 
-class CreateWeekOpeningUnitsModels(MongoBaseModel):
-    unitWeekOpenings: List[GetWeekOpeningUnitModel]
+# class CreateWeekOpeningUnitsModels(MongoBaseModel):
+#     GetAllEvents: GetWeekOpeningUnitModel
 
-    def dict(self):
-        return {
-            "unitWeekOpenings": [unitWeek.dict() for unitWeek in self.unitWeekOpenings],
-        }
+#     def dict(self):
+#         return {
+#             self.GetAllEvents.dict()
+#             # [unitWeek.dict() for unitWeek in self.unitWeekOpenings],
+#         }

@@ -40,9 +40,9 @@ class CreateWeekOpeningsSchema(BaseModel):
 class GetWeekOpeningUnitSchema(CreateWeekOpeningsSchema):
     codUnit: int
 
-
-class CreateWeekOpeningUnitsSchema(BaseModel):
-    unitWeekOpenings: List[GetWeekOpeningUnitSchema]
-
     class Config:
         extra = Extra.forbid
+
+
+# class CreateWeekOpeningUnitsSchema(BaseModel):
+#     GetAllEvents: GetWeekOpeningUnitSchema
