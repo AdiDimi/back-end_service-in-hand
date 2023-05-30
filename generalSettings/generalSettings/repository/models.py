@@ -54,13 +54,18 @@ class HoursPerDayModel(MongoBaseModel):
         }
 
 
-class CreateHoursPerDayModel(MongoBaseModel):
-    hoursPerDay: HoursPerDayModel
+# class CreateHoursPerDayModel(MongoBaseModel):
+#     hoursPerDay: HoursPerDayModel
+
+#     def dict(self):
+#         return {
+#             "hoursPerDay": self.hoursPerDay.dict(),
+#         }
 
 
 class CreateBreakHoursModel(MongoBaseModel):
     # units:List[UnitModel]
-    breakHours: conlist(DayHoursModel, min_items=1)
+    breakHours: conlist(DayHoursModel)
 
     def dict(self):
         return {
@@ -68,20 +73,24 @@ class CreateBreakHoursModel(MongoBaseModel):
         }
 
 
-class GetGeneralSettingModel(CreateBreakHoursModel, CreateHoursPerDayModel):
+class GetGeneralSettingModel(CreateBreakHoursModel):
     lineDuration: int = Field(...)
+    hoursPerDay: HoursPerDayModel = {}
 
     # baseUnitID: int = 1
     def dict(self):
         return {
             "lineDuration": self.lineDuration,
+            "hoursPerDay": self.hoursPerDay.dict(),
         }
 
 
 class GetGeneralSettingsModel(MongoBaseModel):
-    generalSettings: GetGeneralSettingModel
+    generalSettings: List[GetGeneralSettingModel]
 
     def dict(self):
         return {
-            "generalSettings": self.generalSettings.dict(),
+            "generalSettings": [
+                generalSetting.dict() for generalSetting in self.generalSettings
+            ],
         }

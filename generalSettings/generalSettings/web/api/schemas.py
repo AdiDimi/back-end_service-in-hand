@@ -14,8 +14,8 @@ class StatusEnum(Enum):
 
 
 class DayHoursSchema(BaseModel):
-    fromHour: str
-    toHour: str
+    fromHour: str = ""
+    toHour: str = ""
 
 
 class HoursPerDaySchema(BaseModel):
@@ -26,8 +26,8 @@ class HoursPerDaySchema(BaseModel):
     thursday: DayHoursSchema
 
 
-class CreateHoursPerDaySchema(BaseModel):
-    hoursPerDay: HoursPerDaySchema
+# class CreateHoursPerDaySchema(BaseModel):
+#     hoursPerDay: HoursPerDaySchema
 
 
 class CreateBreakHoursSchema(BaseModel):
@@ -35,12 +35,13 @@ class CreateBreakHoursSchema(BaseModel):
     breakHours: List[DayHoursSchema]
 
 
-class GetGeneralSettingSchema(CreateBreakHoursSchema, CreateHoursPerDaySchema):
+class GetGeneralSettingSchema(CreateBreakHoursSchema):
     lineDuration: int
+    hoursPerDay: HoursPerDaySchema
 
 
 class GetGeneralSettingsSchema(BaseModel):
-    generalSettings: GetGeneralSettingSchema
+    generalSettings: List[GetGeneralSettingSchema]
 
     class Config:
         extra = Extra.forbid

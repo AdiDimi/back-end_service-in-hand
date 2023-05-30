@@ -77,10 +77,11 @@ class GetAppointmentModel(CreateAppointmentModel):
         }
 
 
-class GetAppointmentsModel(MongoBaseModel):
-    appoitments: List[GetAppointmentModel]
+# class GetAppointmentsModel(MongoBaseModel):
+#     appoitments: GetAppointmentModel
 
-    def dict(self):
-        return {
-            "appoitments": [appointment.dict() for appointment in self.appoitments],
-        }
+#     def dict(self):
+#         return {
+#             "GetAllAppointments": self.appoitments.dict()
+#             #   [appointment.dict() for appointment in self.appoitments],
+#         }

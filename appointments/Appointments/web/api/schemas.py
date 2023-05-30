@@ -39,8 +39,8 @@ class GetAppointmentSchema(CreateAppointmentsSchema):
     # baseUnitID: int = 1
 
 
-class GetAppointmentsSchema(BaseModel):
-    appointments: List[GetAppointmentSchema]
+# class GetAppointmentsSchema(BaseModel):
+#     GetAllAppointments: GetAppointmentSchema
 
-    class Config:
-        extra = Extra.forbid
+#     class Config:
+#         extra = Extra.forbid

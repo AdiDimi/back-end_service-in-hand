@@ -10,7 +10,6 @@ from Appointments.repository.appointments_repository import appointmentsReposito
 from Appointments.web.appointments_app import app
 from Appointments.web.api.schemas import (
     GetAppointmentSchema,
-    GetAppointmentsSchema,
 )
 
 # from dependency_injector.wiring import inject, Provide
@@ -20,16 +19,16 @@ from Appointments.web.api.schemas import (
 @app.get(
     "/appointments",
     status_code=status.HTTP_200_OK,
-    response_model=GetAppointmentsSchema,
+    response_model=GetAppointmentSchema,
 )
 # @inject
-async def get_requestTypes(dbCollection=Depends(create_db_collections)):
+async def get_appointments(dbCollection=Depends(create_db_collections)):
     # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
     try:
         repo: appointmentsRepository = appointmentsRepository(dbCollection)
-        respnse = await repo.get_request_types()
+        respnse = await repo.get_appointments()
         if respnse is not None:
-            return {"appointments": respnse}
+            return respnse
     except RequestTypeNotFoundError:
         raise GetRequestTypeNotFoundException(
             status_code=404, detail=f"Requests where not found"

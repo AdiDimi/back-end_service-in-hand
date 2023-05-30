@@ -1,7 +1,9 @@
 import datetime
-from fastapi import FastAPI, Request,BackgroundTasks
+from fastapi import FastAPI, Request, BackgroundTasks
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+import uvicorn
+
 # import logging
 from background import audit_log_error, audit_log_transaction
 from handler_exceptions import GetRequestTypeNotFoundException, InvalidActionException
@@ -13,7 +15,7 @@ from Appointments.database.database import close_async_db, create_async_db
 # # setup loggers
 # logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
 # # get root logger
-# logger = logging.getLogger(__name__) 
+# logger = logging.getLogger(__name__)
 
 # define origins
 origins = ["*"]
@@ -29,47 +31,48 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.exception_handler(GlobalStarletteHTTPException)
-def global_exception_handler(req: Request, ex:GlobalStarletteHTTPException):
+def global_exception_handler(req: Request, ex: GlobalStarletteHTTPException):
     with open("audit_log.txt", mode="a") as reqfile:
         content = f"GlobalStarletteHTTPException - message:{str(ex.detail)} status code:{str(ex.status_code)} received at {datetime.datetime.now()} \n"
         reqfile.writelines(content)
     return PlainTextResponse(f"Error message:{ex}", status_code=ex.status_code)
 
+
 @app.exception_handler(RequestValidationError)
-def validationerror_exception_handler(req: Request, ex:RequestValidationError):
+def validationerror_exception_handler(req: Request, ex: RequestValidationError):
     with open("audit_log.txt", mode="a") as reqfile:
         content = f"RequestValidationError - message:{str(ex)} status code:400 received at {datetime.datetime.now()} \n"
         reqfile.writelines(content)
     return PlainTextResponse(f"Error message:{str(ex)}", status_code=400)
 
+
 @app.exception_handler(GetRequestTypeNotFoundException)
-def feedback_exception_handler(req: Request,
-    ex: GetRequestTypeNotFoundException):
+def feedback_exception_handler(req: Request, ex: GetRequestTypeNotFoundException):
     with open("audit_log.txt", mode="a") as reqfile:
         content = f"GetRequestTypeNotFoundException - message:{str(ex.detail)} status code:{str(ex.status_code)} received at {datetime.datetime.now()} \n"
         reqfile.writelines(content)
     return JSONResponse(
-    status_code=ex.status_code,
-    content={"message": f"error: {ex.detail}"}
+        status_code=ex.status_code, content={"message": f"error: {ex.detail}"}
     )
 
+
 @app.exception_handler(InvalidActionException)
-def rating_exception_handler(req: Request,
-    ex: InvalidActionException):
+def rating_exception_handler(req: Request, ex: InvalidActionException):
     with open("audit_log.txt", mode="a") as reqfile:
         content = f"InvalidActionException - message:{str(ex.detail)} status code:{str(ex.status_code)} received at {datetime.datetime.now()} \n"
         reqfile.writelines(content)
     return JSONResponse(
-    status_code=ex.status_code,
-    content={"message": f"error: {ex.detail}"}
+        status_code=ex.status_code, content={"message": f"error: {ex.detail}"}
     )
+
 
 @app.middleware("http")
 async def log_transaction_filter(request: Request, call_next):
     start_time = datetime.datetime.now()
-    method_name= request.method
-    qp_map =  "None"
+    method_name = request.method
+    qp_map = "None"
     # request.query_parasms
     pp_map = "None"
     # request.path_params
@@ -80,13 +83,25 @@ async def log_transaction_filter(request: Request, call_next):
         reqfile.writelines(content)
     response.headers["X-Time-Elapsed"] = str(process_time)
     return response
-    
+
+
 @app.on_event("startup")
 async def startup_db_client():
-  create_async_db()
+    create_async_db()
+
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
     close_async_db()
-    
+
+    # uvicorn.run("users.usersInfo.web.users_app:app",reload=True,port=8000)
+    # uvicorn.run("appointments.Appointments.web.appointments_app:app",reload=True,port=8001)
+    # uvicorn.run("requests.requestTypes.web.requestTypes_app:app",reload=True,port=8002)
+    # uvicorn.run("weekOpening.weekOpening.web.weekOpening_app:app",reload=True,port=8003)
+    #
+
+
 from Appointments.web.api import api
+
+if __name__ == "__appointments_app__":
+    uvicorn.run("Appointments.web.appointments_app:app", reload=True, port=8002)

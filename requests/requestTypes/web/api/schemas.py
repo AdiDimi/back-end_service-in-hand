@@ -3,6 +3,7 @@ from enum import Enum
 from typing import List, Optional
 from pydantic import BaseModel, Extra
 
+
 class StatusEnum(Enum):
     created = "created"
     paid = "paid"
@@ -11,20 +12,28 @@ class StatusEnum(Enum):
     dispatched = "dispatched"
     delivered = "delivered"
 
+
 class UnitSchema(BaseModel):
     codUnit: int
-    name:str
- 
+    name: str
+
+
 class CreateUnitSchema(BaseModel):
-    units:List[UnitSchema]
+    units: List[UnitSchema]
     # conlist(UnitSchema, min_items=1)
+
 
 class GetRequestTypeSchema(CreateUnitSchema):
     codRequestType: int
     requestType: str
-    # baseUnitID: int = 1
+    AuthGroup: int
+
+    # class Config:
+    #     extra = Extra.forbid
+
 
 class GetRequestsTypesSchema(BaseModel):
-    requestTypes:List[GetRequestTypeSchema]
+    requestTypes: List[GetRequestTypeSchema]
+
     class Config:
-         extra = Extra.forbid   
+        extra = Extra.forbid
