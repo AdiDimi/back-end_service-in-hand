@@ -482,3 +482,10 @@ Log: [6e152ce7-935e-4ae1-ab72-1d255caac61b: 2023-05-30T20:40:00.399143+0300 - IN
 Log: [6e152ce7-935e-4ae1-ab72-1d255caac61b: 2023-05-30T20:40:00.399143+0300 - INFO - Request to access /service_in_hand/4 
 Log: [6e152ce7-935e-4ae1-ab72-1d255caac61b: 2023-05-30T20:40:00.405126+0300 - INFO - Successfully accessed /service_in_hand/4 
 Log: [6e152ce7-935e-4ae1-ab72-1d255caac61b: 2023-05-30T20:40:00.405126+0300 - INFO - Successfully accessed /service_in_hand/4 
+Log: [7732ae5d-96d7-4c3b-91a1-3cf7bd1bef90: 2023-05-31T10:45:26.838772+0300 - INFO - Request to access / 
+Log: [7732ae5d-96d7-4c3b-91a1-3cf7bd1bef90: 2023-05-31T10:45:26.838772+0300 - INFO - Request to access / 
+Log: [7732ae5d-96d7-4c3b-91a1-3cf7bd1bef90: 2023-05-31T10:45:26.843760+0300 - INFO - Successfully accessed / 
+Log: [7732ae5d-96d7-4c3b-91a1-3cf7bd1bef90: 2023-05-31T10:45:26.843760+0300 - INFO - Successfully accessed / 
+Log: [70dc4bc8-6c3e-4a77-aacc-966a5691caeb: 2023-05-31T10:45:43.626256+0300 - INFO - Request to access /service_in_hand/1 
+Log: [70dc4bc8-6c3e-4a77-aacc-966a5691caeb: 2023-05-31T10:45:43.633211+0300 - INFO - Successfully accessed /service_in_hand/1 
+Log: [70dc4bc8-6c3e-4a77-aacc-966a5691caeb: 2023-05-31T10:45:43.633211+0300 - INFO - Successfully accessed /service_in_hand/1 
