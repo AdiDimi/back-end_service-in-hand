@@ -14,3 +14,14 @@ class generalSettingsRepository:
         if respnse is not None:
             return respnse
         raise RequestTypeNotFoundError("Requests where not found")
+
+    async def update_general_settings(
+        self, generalSettings: GetGeneralSettingsModel
+    ) -> bool:
+        cursor = self.dbCollection.update_one({"$set": {generalSettings}})
+        respnse = await cursor
+        # .to_list(length=None)
+        if respnse is not None:
+            return True
+        else:
+            return False
