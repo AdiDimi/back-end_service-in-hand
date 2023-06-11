@@ -3,12 +3,14 @@ from fastapi.encoders import jsonable_encoder
 from starlette import status
 from handler_exceptions import GetRequestTypeNotFoundException
 from Appointments.database.database import create_db_collections
+from fastapi.responses import JSONResponse
 
 # from requestTypes.containers.single_container import requestTypesContainer
 from Appointments.repository.exceptions import RequestTypeNotFoundError
 from Appointments.repository.appointments_repository import appointmentsRepository
 from Appointments.web.appointments_app import app
 from Appointments.web.api.schemas import (
+    AppointmentSchema,
     GetAppointmentSchema,
     GetWeekOpeningSchema,
 )
@@ -34,6 +36,33 @@ async def get_appointments(dbCollection=Depends(create_db_collections)):
     except RequestTypeNotFoundError:
         raise GetRequestTypeNotFoundException(
             status_code=404, detail=f"Requests where not found"
+        )
+
+
+@app.put(
+    "/appointments",
+    status_code=status.HTTP_200_OK,
+)
+# @inject
+async def put_appointments(
+    appointment: AppointmentSchema,
+    dbCollection=Depends(create_db_collections),
+):
+    # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
+    try:
+        repo: appointmentsRepository = appointmentsRepository(dbCollection)
+        respnse = await repo.update_appointment(appointment)
+        if respnse == True:
+            return JSONResponse(
+                status_code=201, content=f"Update appointment was successful"
+            )
+        else:
+            return JSONResponse(
+                status_code=500, content=f"Update appointments was unsuccessful"
+            )
+    except RequestTypeNotFoundError:
+        raise GetRequestTypeNotFoundException(
+            status_code=404, detail=f"appointment was not found"
         )
 
 
