@@ -1,6 +1,8 @@
+from datetime import date
+import datetime
 from bson import ObjectId
-from pydantic import BaseModel, Field, conlist
-from typing import Annotated, List, Literal, Union
+from pydantic import BaseModel, Field, conlist, validator
+from typing import Annotated, List, Literal, Optional, Union
 
 
 class PyObjectId(ObjectId):
@@ -43,16 +45,22 @@ class LogisticRequestModel(MongoBaseModel):
     codRequest: int = Field(...)
     codRequestType: Literal[1]
     HandleUnit: str = Field(...)
-    requestDate: str = Field(...)
+    codUnit: Optional[int] = 0
+    requestDate: date = "1900-01-01T00:00:00"
     status: str = Field(...)
     remarks: str = Field(...)
     requestItems: conlist(LogisticItemModel)
+
+    @validator("requestDate", pre=True)
+    def requestDate_datetime(cls, value):
+        return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
 
     def dict(self):
         return {
             "codRequest": self.codRequest,
             "codRequestType": self.codRequestType,
             "HandleUnit": self.HandleUnit,
+            "codUnit": self.codUnit,
             "requestDate": self.requestDate,
             "status": self.status,
             "requestItems": [item.dict() for item in self.requestItems],
@@ -64,7 +72,8 @@ class MaintenanceRequestModel(MongoBaseModel):
     codRequest: int = Field(...)
     codRequestType: Literal[4]
     HandleUnit: str = Field(...)
-    requestDate: str = Field(...)
+    codUnit: Optional[int] = 0
+    requestDate: date = "1900-01-01T00:00:00"
     status: str = Field(...)
     unitName: str = Field(...)
     target: str = Field(...)
@@ -84,14 +93,20 @@ class MaintenanceRequestModel(MongoBaseModel):
     optDate2: str = Field(...)
     optDate3: str = Field(...)
 
+    @validator("requestDate", pre=True)
+    def requestDate_datetime(cls, value):
+        return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
+
     def dict(self):
         return {
             "codRequest": self.codRequest,
             "codRequestType": self.codRequestType,
             "HandleUnit": self.HandleUnit,
+            "codUnit": self.codUnit,
             "requestDate": self.requestDate,
             "status": self.status,
             "unitName": self.unitName,
+            "codUnit": self.codUnit,
             "target": self.target,
             "targetAudience1": self.targetAudience1,
             "targetAudience2": self.targetAudience2,
@@ -115,7 +130,8 @@ class QualificationRequestModel(MongoBaseModel):
     codRequest: int = Field(...)
     codRequestType: Literal[2]
     HandleUnit: str = Field(...)
-    requestDate: str = Field(...)
+    codUnit: Optional[int] = 0
+    requestDate: date = "1900-01-01T00:00:00"
     status: str = Field(...)
     contactMan: str = Field(...)
     telephone: str = Field(...)
@@ -125,11 +141,16 @@ class QualificationRequestModel(MongoBaseModel):
     optDate2: str = Field(...)
     optDate3: str = Field(...)
 
+    @validator("requestDate", pre=True)
+    def requestDate_datetime(cls, value):
+        return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
+
     def dict(self):
         return {
             "codRequest": self.codRequest,
             "codRequestType": self.codRequestType,
             "HandleUnit": self.HandleUnit,
+            "codUnit": self.codUnit,
             "requestDate": self.requestDate,
             "status": self.status,
             "malfunctionDesc": self.malfunctionDesc,
@@ -160,10 +181,14 @@ class CreateUserRequestModel(MongoBaseModel):
 
 class GeteUserRequestModel(CreateUserRequestModel):
     userID: int = Field(...)
+    authGroup: int = Field(...)
+    adminUnits: conlist(int) = [0]
 
     def dict(self):
         return {
             "userID": self.userID,
+            "authGroup": self.authGroup,
+            "adminUnits": [unit for unit in self.adminUnits],
         }
 
 

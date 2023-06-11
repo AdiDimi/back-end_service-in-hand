@@ -2,3 +2,5 @@ Error message:Not Found status code:404 received at 2023-05-11 14:59:45.322632Er
 GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-05-25 10:26:21.054704 
 GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-05-25 13:25:29.987948 
 GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-05-30 17:24:32.158272 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-06-08 14:34:05.286420 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-06-08 14:34:05.872623 
