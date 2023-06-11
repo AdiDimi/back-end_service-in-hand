@@ -28,11 +28,10 @@ class usersRepository:
                     # },
                     {"userRequests.codUnit": {"$in": respnse["adminUnits"]}},
                 )
-                users: list[GeteUserRequestModel] = await usrCursor.to_list(1000)
+                users: list[GeteUserRequestModel] = await usrCursor.to_list(length=None)
                 if users is not None:
                     for user in users:
                         for request in user["userRequests"]:
-                            # print(request)
                             currReq: UserRequestModel = request
                             if currReq["codUnit"] in respnse["adminUnits"]:
                                 respnse["userRequests"].append(request)

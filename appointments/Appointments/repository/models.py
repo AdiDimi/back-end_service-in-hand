@@ -77,6 +77,44 @@ class GetAppointmentModel(CreateAppointmentModel):
         }
 
 
+class EventModel(MongoBaseModel):
+    id: str = Field(...)
+    title: str = Field(...)
+    date: str = Field(...)
+    fromHour: str = Field(...)
+    toHour: str = Field(...)
+    isAllDay: bool = Field(...)
+
+    def dict(self):
+        return {
+            "id": self.id,
+            "title": self.title,
+            "date": self.date,
+            "fromHour": self.fromHour,
+            "toHour": self.toHour,
+            "isAllDay": self.isAllDay,
+        }
+
+
+class CreateEventModel(MongoBaseModel):
+    # units:List[UnitModel]
+    events: conlist(EventModel, min_items=1)
+
+    def dict(self):
+        return {
+            "units": [event.dict() for event in self.events],
+        }
+
+
+class GetWeekOpeningModel(CreateEventModel):
+    weekStartDate: str = Field(...)
+
+    def dict(self):
+        return {
+            "weekStartDate": self.weekStartDate,
+        }
+
+
 # class GetAppointmentsModel(MongoBaseModel):
 #     appoitments: GetAppointmentModel
 

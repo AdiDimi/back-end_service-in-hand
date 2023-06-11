@@ -1,4 +1,4 @@
-FROM python:3.10.4
+FROM python:3.10.4 
 COPY users /users
 WORKDIR /users
 COPY ./users/requirements.txt /users/requirements.txt

@@ -10,7 +10,9 @@ from Appointments.repository.appointments_repository import appointmentsReposito
 from Appointments.web.appointments_app import app
 from Appointments.web.api.schemas import (
     GetAppointmentSchema,
+    GetWeekOpeningSchema,
 )
+import httpx
 
 # from dependency_injector.wiring import inject, Provide
 # import sys
@@ -29,6 +31,27 @@ async def get_appointments(dbCollection=Depends(create_db_collections)):
         respnse = await repo.get_appointments()
         if respnse is not None:
             return respnse
+    except RequestTypeNotFoundError:
+        raise GetRequestTypeNotFoundException(
+            status_code=404, detail=f"Requests where not found"
+        )
+
+
+@app.post(
+    "/appointments/",
+    status_code=status.HTTP_200_OK,
+)
+async def create_appointments(
+    weekEvents: GetWeekOpeningSchema, dbCollection=Depends(create_db_collections)
+):
+    # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
+    try:
+        repo: appointmentsRepository = appointmentsRepository(dbCollection)
+        async with httpx.AsyncClient() as client:
+            respnse = await client.get("http://localhost:8005/generalSettings")
+        if respnse is not None:
+            weekOpenings = respnse.json()["weekOpenings"]
+        return weekOpenings
     except RequestTypeNotFoundError:
         raise GetRequestTypeNotFoundException(
             status_code=404, detail=f"Requests where not found"

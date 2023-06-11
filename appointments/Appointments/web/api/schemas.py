@@ -39,6 +39,26 @@ class GetAppointmentSchema(CreateAppointmentsSchema):
     # baseUnitID: int = 1
 
 
+class EventSchema(BaseModel):
+    id: str
+    title: str
+    date: str
+    fromHour: str
+    toHour: str
+    isAllDay: bool
+
+
+class CreateEventSchema(BaseModel):
+    events: List[EventSchema]
+
+
+# conlist(UnitSchema, min_items=1)
+
+
+class GetWeekOpeningSchema(CreateEventSchema):
+    weekStartDate: str
+
+
 # class GetAppointmentsSchema(BaseModel):
 #     GetAllAppointments: GetAppointmentSchema
 
