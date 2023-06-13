@@ -15,6 +15,13 @@ class generalSettingsRepository:
             return respnse
         raise RequestTypeNotFoundError("Requests where not found")
 
+    async def get_unit_general_settings(self, codUnit) -> GetGeneralSettingsModel:
+        cursor = self.dbCollection.find({"codUnit": codUnit})
+        respnse = await cursor.to_list(length=None)
+        if respnse is not None:
+            return respnse
+        raise RequestTypeNotFoundError("Requests where not found")
+
     async def update_general_settings(
         self, generalSettings: GetGeneralSettingsModel
     ) -> bool:

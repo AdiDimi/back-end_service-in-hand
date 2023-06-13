@@ -1,4 +1,4 @@
-from fastapi import Depends
+from fastapi import Body, Depends
 from fastapi.encoders import jsonable_encoder
 from starlette import status
 from handler_exceptions import GetRequestTypeNotFoundException
@@ -45,7 +45,7 @@ async def get_appointments(dbCollection=Depends(create_db_collections)):
 )
 # @inject
 async def put_appointments(
-    appointment: AppointmentSchema,
+    appointment: AppointmentSchema = Body(...),
     dbCollection=Depends(create_db_collections),
 ):
     # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
@@ -66,21 +66,27 @@ async def put_appointments(
         )
 
 
-@app.post(
-    "/appointments/",
+@app.get(
+    "/appointments/{Id}",
     status_code=status.HTTP_200_OK,
 )
 async def create_appointments(
-    weekEvents: GetWeekOpeningSchema, dbCollection=Depends(create_db_collections)
+    Id: int = 5,
+    # weekEvents: GetWeekOpeningSchema = Body(...),
+    dbCollection=Depends(create_db_collections),
 ):
     # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
     try:
         repo: appointmentsRepository = appointmentsRepository(dbCollection)
         async with httpx.AsyncClient() as client:
-            respnse = await client.get("http://localhost:8005/generalSettings")
+            respnse = await client.get(f"http://localhost:8005/generalSettings/{Id}")
         if respnse is not None:
-            weekOpenings = respnse.json()["weekOpenings"]
-        return weekOpenings
+            generalSettings = respnse.json()
+            return generalSettings
+        else:
+            return JSONResponse(
+                status_code=204, content=f"Update appointments was unsuccessful"
+            )
     except RequestTypeNotFoundError:
         raise GetRequestTypeNotFoundException(
             status_code=404, detail=f"Requests where not found"

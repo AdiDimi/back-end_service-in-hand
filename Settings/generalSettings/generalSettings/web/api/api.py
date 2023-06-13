@@ -38,6 +38,27 @@ async def get_generalSettings(dbCollection=Depends(create_db_collections)):
         )
 
 
+@app.get(
+    "/generalSettings/{unitCode}",
+    status_code=status.HTTP_200_OK,
+    response_model=GetGeneralSettingsSchema,
+)
+# @inject
+async def get_unit_generalSettings(
+    unitCode: int, dbCollection=Depends(create_db_collections)
+):
+    # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
+    try:
+        repo: generalSettingsRepository = generalSettingsRepository(dbCollection)
+        respnse = await repo.get_unit_general_settings(unitCode)
+        if respnse is not None:
+            return {"generalSettings": respnse}
+    except RequestTypeNotFoundError:
+        raise GetRequestTypeNotFoundException(
+            status_code=404, detail=f"Requests where not found"
+        )
+
+
 @app.put(
     "/generalSettings",
     status_code=status.HTTP_200_OK,

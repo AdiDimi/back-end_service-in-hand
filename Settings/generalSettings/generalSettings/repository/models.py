@@ -74,12 +74,14 @@ class CreateBreakHoursModel(MongoBaseModel):
 
 
 class GetGeneralSettingModel(CreateBreakHoursModel):
+    codUnit: int = Field(...)
     lineDuration: int = Field(...)
     hoursPerDay: HoursPerDayModel = {}
 
     # baseUnitID: int = 1
     def dict(self):
         return {
+            "codUnit": self.codUnit,
             "lineDuration": self.lineDuration,
             "hoursPerDay": self.hoursPerDay.dict(),
         }

@@ -36,6 +36,7 @@ class CreateBreakHoursSchema(BaseModel):
 
 
 class GetGeneralSettingSchema(CreateBreakHoursSchema):
+    codUnit: int
     lineDuration: int
     hoursPerDay: HoursPerDaySchema
 

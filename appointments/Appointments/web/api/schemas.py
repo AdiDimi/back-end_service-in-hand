@@ -64,3 +64,34 @@ class GetWeekOpeningSchema(CreateEventSchema):
 
 #     class Config:
 #         extra = Extra.forbid
+
+
+class DayHoursSchema(BaseModel):
+    fromHour: str = ""
+    toHour: str = ""
+
+
+class HoursPerDaySchema(BaseModel):
+    sunday: DayHoursSchema
+    monday: DayHoursSchema
+    tuesday: DayHoursSchema
+    wednesday: DayHoursSchema
+    thursday: DayHoursSchema
+
+
+# class CreateHoursPerDaySchema(BaseModel):
+#     hoursPerDay: HoursPerDaySchema
+
+
+class CreateBreakHoursSchema(BaseModel):
+    # units:List[UnitModel]
+    breakHours: List[DayHoursSchema]
+
+
+class GetGeneralSettingSchema(CreateBreakHoursSchema):
+    lineDuration: int
+    hoursPerDay: HoursPerDaySchema
+
+
+class GetGeneralSettingsSchema(BaseModel):
+    generalSettings: List[GetGeneralSettingSchema]
