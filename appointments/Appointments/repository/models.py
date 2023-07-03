@@ -115,6 +115,78 @@ class GetWeekOpeningModel(CreateEventModel):
         }
 
 
+class DayHoursModel(MongoBaseModel):
+    fromHour: str = Field(...)
+    toHour: str = Field(...)
+
+    def dict(self):
+        return {
+            "fromHour": self.fromHour,
+            "toHour": self.toHour,
+        }
+
+
+class HoursPerDayModel(MongoBaseModel):
+    sunday: DayHoursModel = Field(...)
+    monday: DayHoursModel = Field(...)
+    tuesday: DayHoursModel = Field(...)
+    wednesday: DayHoursModel = Field(...)
+    thursday: DayHoursModel = Field(...)
+
+    def dict(self):
+        return {
+            "sunday": self.sunday.dict(),
+            "monday": self.monday.dict(),
+            "tuesday": self.tuesday.dict(),
+            "wednesday": self.wednesday.dict(),
+            "thursday": self.thursday.dict(),
+        }
+
+
+# class CreateHoursPerDayModel(MongoBaseModel):
+#     hoursPerDay: HoursPerDayModel
+
+#     def dict(self):
+#         return {
+#             "hoursPerDay": self.hoursPerDay.dict(),
+#         }
+
+
+class CreateBreakHoursModel(MongoBaseModel):
+    # units:List[UnitModel]
+    breakHours: conlist(DayHoursModel)
+
+    def dict(self):
+        return {
+            "breakHours": [breakHour.dict() for breakHour in self.breakHours],
+        }
+
+
+class GetGeneralSettingModel(CreateBreakHoursModel):
+    codUnit: int = Field(...)
+    lineDuration: int = Field(...)
+    hoursPerDay: HoursPerDayModel = {}
+
+    # baseUnitID: int = 1
+    def dict(self):
+        return {
+            "codUnit": self.codUnit,
+            "lineDuration": self.lineDuration,
+            "hoursPerDay": self.hoursPerDay.dict(),
+        }
+
+
+class GetGeneralSettingsModel(MongoBaseModel):
+    generalSettings: List[GetGeneralSettingModel]
+
+    def dict(self):
+        return {
+            "generalSettings": [
+                generalSetting.dict() for generalSetting in self.generalSettings
+            ],
+        }
+
+
 # class GetAppointmentsModel(MongoBaseModel):
 #     appoitments: GetAppointmentModel
 

@@ -29,6 +29,18 @@ class appointmentsRepository:
         else:
             return False
 
+    async def create_appointments(self, appointment: AppointmentModel) -> bool:
+        cursor = self.dbCollection.update_one(
+            {"openRequests.codRequest": appointment.codRequest},
+            {"$set": {"openRequests.$.status": appointment.status}},
+        )
+        respnse = await cursor
+        # .to_list(length=None)
+        if respnse is not None:
+            return True
+        else:
+            return False
+
     def get_daily_slots(start, end, slot, date):
         # combine start time to respective day
         dt = datetime.combine(date, datetime.strptime(start, "%H:%M").time())

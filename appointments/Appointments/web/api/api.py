@@ -1,6 +1,7 @@
 from fastapi import Body, Depends
 from fastapi.encoders import jsonable_encoder
 from starlette import status
+from appointments.Appointments.web.api.schemas import GetGeneralSettingsSchema
 from handler_exceptions import GetRequestTypeNotFoundException
 from Appointments.database.database import create_db_collections
 from fastapi.responses import JSONResponse
@@ -41,7 +42,7 @@ async def get_appointments(dbCollection=Depends(create_db_collections)):
 
 @app.put(
     "/appointments",
-    status_code=status.HTTP_200_OK,
+    status_code=status.HTTP_202_ACCEPTED,
 )
 # @inject
 async def put_appointments(
@@ -54,7 +55,7 @@ async def put_appointments(
         respnse = await repo.update_appointment(appointment)
         if respnse == True:
             return JSONResponse(
-                status_code=201, content=f"Update appointment was successful"
+                status_code=202, content=f"Update appointment was successful"
             )
         else:
             return JSONResponse(
@@ -66,26 +67,28 @@ async def put_appointments(
         )
 
 
-@app.get(
-    "/appointments/{Id}",
-    status_code=status.HTTP_200_OK,
+@app.post(
+    "/appointments/",
+    status_code=status.HTTP_201_CREATED,
 )
 async def create_appointments(
-    Id: int = 5,
-    # weekEvents: GetWeekOpeningSchema = Body(...),
+    weekEvents: GetWeekOpeningSchema = Body(...),
     dbCollection=Depends(create_db_collections),
 ):
     # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
     try:
         repo: appointmentsRepository = appointmentsRepository(dbCollection)
         async with httpx.AsyncClient() as client:
-            respnse = await client.get(f"http://localhost:8005/generalSettings/{Id}")
+            respnse = await client.get("http://localhost:8005/generalSettings")
         if respnse is not None:
-            generalSettings = respnse.json()
+            generalSettings: GetGeneralSettingsSchema = respnse.json()[
+                "generalSettings"
+            ]
+            # repo.create_appointments
             return generalSettings
         else:
             return JSONResponse(
-                status_code=204, content=f"Update appointments was unsuccessful"
+                status_code=500, content=f"Creating appointments was unsuccessful"
             )
     except RequestTypeNotFoundError:
         raise GetRequestTypeNotFoundException(
