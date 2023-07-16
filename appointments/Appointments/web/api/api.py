@@ -1,7 +1,7 @@
 from fastapi import Body, Depends
 from fastapi.encoders import jsonable_encoder
 from starlette import status
-from appointments.Appointments.web.api.schemas import GetGeneralSettingsSchema
+from Appointments.web.api.schemas import GetGeneralSettingsSchema
 from handler_exceptions import GetRequestTypeNotFoundException
 from Appointments.database.database import create_db_collections
 from fastapi.responses import JSONResponse

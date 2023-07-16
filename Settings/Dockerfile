@@ -1,4 +1,4 @@
-FROM python:3.10.4
+FROM python:3.10.4-slim
 COPY generalSettings /generalSettings
 WORKDIR /generalSettings
 COPY ./generalSettings/requirements.txt /generalSettings/requirements.txt

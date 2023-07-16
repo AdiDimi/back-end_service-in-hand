@@ -19,3 +19,5 @@ GlobalStarletteHTTPException - message:Not Found status code:404 received at 202
 RequestValidationError - message:1 validation error for Request
 body
   field required (type=value_error.missing) status code:400 received at 2023-06-13 14:38:04.982342 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-07-11 13:29:05.120427 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-07-11 13:29:05.389428 
