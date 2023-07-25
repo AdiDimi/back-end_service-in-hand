@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b5a8566-264f-468d-aae9-29b89f47ec23" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Settings/generalSettings/generalSettings/database/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/appointments/Appointments/database/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/events/weekOpening/weekOpening/database/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requests/requests/requestTypes/database/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/users/usersInfo/database/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appointments/Appointments/web/appointments_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/Appointments/web/appointments_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/audit_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/audit_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appointments/request_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/request_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appointments/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/appointments/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/service_in_hand.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/service_in_hand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/weekOpening/request_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/weekOpening/request_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/weekOpening/weekOpening/web/weekOpening_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/events/weekOpening/weekOpening/web/weekOpening_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/api_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/api_router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/users/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,5 +56,16 @@
       <updated>1689837825761</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -103,5 +103,6 @@ async def shutdown_db_client():
 
 from Appointments.web.api import api
 
-if __name__ == "__appointments_app__":
-    uvicorn.run("Appointments.web.appointments_app:app", reload=True, port=8002)
+#  if __name__ == "__appointments_app__":
+# uvicorn.run("Appointments.web.appointments_app:app", reload=True, port=8002)
+

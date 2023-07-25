@@ -8,6 +8,7 @@ from gateway.api_router import (
     RedirectAppointmentsServiceException,
     RedirectUsersServiceException,
     RedirectWeekOpeningServiceException,
+    RedirectGeneralSettingsServiceException,
 )
 from controller import service_in_hand
 
@@ -63,28 +64,35 @@ async def log_middleware(request: Request, call_next):
 def exception_handler_student(
     request: Request, exc: RedirectWeekOpeningServiceException
 ) -> Response:
-    return RedirectResponse(url="http://localhost:8004/weekOpenings")
+    return RedirectResponse(url="http://44.211.49.38:8004/weekOpenings")
 
 
 @app.exception_handler(RedirectRequestTypesServiceException)
 def exception_handler_student(
     request: Request, exc: RedirectRequestTypesServiceException
 ) -> Response:
-    return RedirectResponse(url="http://localhost:8003/requestTypes")
+    return RedirectResponse(url="http://54.80.229.96:8003/requestTypes")
 
 
 @app.exception_handler(RedirectAppointmentsServiceException)
 def exception_handler_faculty(
     request: Request, exc: RedirectAppointmentsServiceException
 ) -> Response:
-    return RedirectResponse(url="http://localhost:8002/appointments")
+    return RedirectResponse(url="http://44.204.186.117:8002/appointments")
 
 
 @app.exception_handler(RedirectUsersServiceException)
 def exception_handler_library(
     request: Request, exc: RedirectUsersServiceException
 ) -> Response:
-    return RedirectResponse(url="http://localhost:8001/users")
+    return RedirectResponse(url="http://44.203.154.13:8001/users")
+
+
+@app.exception_handler(RedirectGeneralSettingsServiceException)
+def exception_handler_library(
+    request: Request, exc: RedirectGeneralSettingsServiceException
+) -> Response:
+    return RedirectResponse(url="http://3.87.189.148:8005/generalSettings")
 
 
 if __name__ == "__main__":

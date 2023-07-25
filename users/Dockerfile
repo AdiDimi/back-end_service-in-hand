@@ -1,4 +1,4 @@
-FROM python:3.10.4 
+FROM python:3.10.4-slim
 COPY users /users
 WORKDIR /users
 COPY ./users/requirements.txt /users/requirements.txt
@@ -6,4 +6,4 @@ COPY ./users/requirements.txt /users/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /users/requirements.txt
 COPY ./users/usersInfo /users/usersInfo
 EXPOSE 8001
-CMD ["uvicorn", "usersInfo.web.users_app:app", "--host=0.0.0.0" , "--reload" , "--port", "8001"]
+CMD ["uvicorn", "usersInfo.web.users_app:app","--proxy-headers", "--host=0.0.0.0" , "--reload" , "--port", "8001"]
