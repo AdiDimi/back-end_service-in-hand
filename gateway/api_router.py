@@ -15,6 +15,8 @@ def call_api_gateway(request: Request):
         raise RedirectUsersServiceException()
     elif portal_id == str(4):
         raise RedirectWeekOpeningServiceException()
+    elif portal_id == str(5):
+        raise RedirectGeneralSettingsServiceException()
 
 
 class RedirectRequestTypesServiceException(Exception):
@@ -30,4 +32,8 @@ class RedirectUsersServiceException(Exception):
 
 
 class RedirectWeekOpeningServiceException(Exception):
+    pass
+
+
+class RedirectGeneralSettingsServiceException(Exception):
     pass

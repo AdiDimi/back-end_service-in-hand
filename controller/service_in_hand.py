@@ -3,16 +3,16 @@ from fastapi import APIRouter
 router = APIRouter()
 
 
-@router.get("/service_in_hand/{portal_id}")
+@router.get("/api/{portal_id}")
 def access_portal(portal_id: int):
     return {"message": "service_in_hand portal"}
 
 
-@router.put("/service_in_hand/{portal_id}")
+@router.put("/api/{portal_id}")
 def access_portal(portal_id: int):
     return {"message": "service_in_hand portal"}
 
 
-@router.post("/service_in_hand/{portal_id}")
+@router.post("/api/{portal_id}")
 def access_portal(portal_id: int):
     return {"message": "service_in_hand portal"}

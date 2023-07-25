@@ -21,3 +21,8 @@ body
   field required (type=value_error.missing) status code:400 received at 2023-06-13 14:38:04.982342 
 GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-07-11 13:29:05.120427 
 GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-07-11 13:29:05.389428 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-07-20 11:21:06.525358 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-07-20 11:21:06.749362 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-07-20 13:21:15.652940 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-07-20 13:21:16.190563 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-07-20 13:21:35.763160 

@@ -489,3 +489,11 @@ Log: [7732ae5d-96d7-4c3b-91a1-3cf7bd1bef90: 2023-05-31T10:45:26.843760+0300 - IN
 Log: [70dc4bc8-6c3e-4a77-aacc-966a5691caeb: 2023-05-31T10:45:43.626256+0300 - INFO - Request to access /service_in_hand/1 
 Log: [70dc4bc8-6c3e-4a77-aacc-966a5691caeb: 2023-05-31T10:45:43.633211+0300 - INFO - Successfully accessed /service_in_hand/1 
 Log: [70dc4bc8-6c3e-4a77-aacc-966a5691caeb: 2023-05-31T10:45:43.633211+0300 - INFO - Successfully accessed /service_in_hand/1 
+Log: [add4e523-2417-4dfb-9160-215172c1a4e6: 2023-07-20T14:54:02.973592+0300 - INFO - Request to access / 
+Log: [add4e523-2417-4dfb-9160-215172c1a4e6: 2023-07-20T14:54:03.275049+0300 - INFO - Successfully accessed / 
+Log: [fbbd7bb0-b6eb-4e29-88c2-12afb83898fb: 2023-07-20T14:54:11.719245+0300 - INFO - Request to access /2 
+Log: [fbbd7bb0-b6eb-4e29-88c2-12afb83898fb: 2023-07-20T14:54:11.724243+0300 - INFO - Successfully accessed /2 
+Log: [481afcd4-2965-4f11-b207-9e4bf8de9418: 2023-07-20T14:54:51.047348+0300 - INFO - Request to access /service_in_hand/2 
+Log: [481afcd4-2965-4f11-b207-9e4bf8de9418: 2023-07-20T14:54:51.054345+0300 - INFO - Successfully accessed /service_in_hand/2 
+Log: [7a9e5d77-e548-4444-a2f1-0aea099b50c8: 2023-07-20T14:56:51.089976+0300 - INFO - Request to access /service_in_hand/1 
+Log: [7a9e5d77-e548-4444-a2f1-0aea099b50c8: 2023-07-20T14:56:51.216095+0300 - INFO - Successfully accessed /service_in_hand/1 
