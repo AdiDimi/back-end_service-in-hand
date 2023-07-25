@@ -1,0 +1,33 @@
+Index: appointments/requirements.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>anyio==3.6.2\r\nclick==8.1.3\r\ncolorama==0.4.6\r\ndependency-injector==4.41.0\r\ndnspython==2.3.0\r\nfastapi==0.95.2\r\nh11==0.14.0\r\nidna==3.4\r\nmotor==3.1.2\r\npydantic==1.10.7\r\npymongo==4.3.3\r\npython-dateutil==2.8.2\r\npython-decouple==3.8\r\nsix==1.16.0\r\nsniffio==1.3.0\r\nstarlette==0.27.0\r\ntyping_extensions==4.5.0\r\nuvicorn==0.22.0\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-16LE
+===================================================================
+diff --git a/appointments/requirements.txt b/appointments/requirements.txt
+--- a/appointments/requirements.txt	(revision e606d7b6d709a8b81825366be0092110243b532c)
++++ b/appointments/requirements.txt	(date 1690292197642)
+@@ -16,3 +16,4 @@
+ starlette==0.27.0
+ typing_extensions==4.5.0
+ uvicorn==0.22.0
++httpx
+\ No newline at end of file
+Index: appointments/Appointments/web/appointments_app.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import datetime\r\nfrom fastapi import FastAPI, Request, BackgroundTasks\r\nfrom fastapi.responses import JSONResponse\r\nfrom fastapi.middleware.cors import CORSMiddleware\r\nimport uvicorn\r\n\r\n# import logging\r\nfrom background import audit_log_error, audit_log_transaction\r\nfrom handler_exceptions import GetRequestTypeNotFoundException, InvalidActionException\r\nfrom fastapi.responses import PlainTextResponse\r\nfrom starlette.exceptions import HTTPException as GlobalStarletteHTTPException\r\nfrom fastapi.exceptions import RequestValidationError\r\nfrom Appointments.database.database import close_async_db, create_async_db\r\n\r\n# # setup loggers\r\n# logging.config.fileConfig('logging.conf', disable_existing_loggers=False)\r\n# # get root logger\r\n# logger = logging.getLogger(__name__)\r\n\r\n# define origins\r\norigins = [\"*\"]\r\n\r\napp = FastAPI(debug=True)\r\n\r\n# add CORS middleware\r\napp.add_middleware(\r\n    CORSMiddleware,\r\n    allow_origins=origins,\r\n    allow_credentials=True,\r\n    allow_methods=[\"*\"],\r\n    allow_headers=[\"*\"],\r\n)\r\n\r\n\r\n@app.exception_handler(GlobalStarletteHTTPException)\r\ndef global_exception_handler(req: Request, ex: GlobalStarletteHTTPException):\r\n    with open(\"audit_log.txt\", mode=\"a\") as reqfile:\r\n        content = f\"GlobalStarletteHTTPException - message:{str(ex.detail)} status code:{str(ex.status_code)} received at {datetime.datetime.now()} \\n\"\r\n        reqfile.writelines(content)\r\n    return PlainTextResponse(f\"Error message:{ex}\", status_code=ex.status_code)\r\n\r\n\r\n@app.exception_handler(RequestValidationError)\r\ndef validationerror_exception_handler(req: Request, ex: RequestValidationError):\r\n    with open(\"audit_log.txt\", mode=\"a\") as reqfile:\r\n        content = f\"RequestValidationError - message:{str(ex)} status code:400 received at {datetime.datetime.now()} \\n\"\r\n        reqfile.writelines(content)\r\n    return PlainTextResponse(f\"Error message:{str(ex)}\", status_code=400)\r\n\r\n\r\n@app.exception_handler(GetRequestTypeNotFoundException)\r\ndef feedback_exception_handler(req: Request, ex: GetRequestTypeNotFoundException):\r\n    with open(\"audit_log.txt\", mode=\"a\") as reqfile:\r\n        content = f\"GetRequestTypeNotFoundException - message:{str(ex.detail)} status code:{str(ex.status_code)} received at {datetime.datetime.now()} \\n\"\r\n        reqfile.writelines(content)\r\n    return JSONResponse(\r\n        status_code=ex.status_code, content={\"message\": f\"error: {ex.detail}\"}\r\n    )\r\n\r\n\r\n@app.exception_handler(InvalidActionException)\r\ndef rating_exception_handler(req: Request, ex: InvalidActionException):\r\n    with open(\"audit_log.txt\", mode=\"a\") as reqfile:\r\n        content = f\"InvalidActionException - message:{str(ex.detail)} status code:{str(ex.status_code)} received at {datetime.datetime.now()} \\n\"\r\n        reqfile.writelines(content)\r\n    return JSONResponse(\r\n        status_code=ex.status_code, content={\"message\": f\"error: {ex.detail}\"}\r\n    )\r\n\r\n\r\n@app.middleware(\"http\")\r\nasync def log_transaction_filter(request: Request, call_next):\r\n    start_time = datetime.datetime.now()\r\n    method_name = request.method\r\n    qp_map = \"None\"\r\n    # request.query_parasms\r\n    pp_map = \"None\"\r\n    # request.path_params\r\n    response = await call_next(request)\r\n    process_time = datetime.datetime.now() - start_time\r\n    with open(\"request_log.txt\", mode=\"a\") as reqfile:\r\n        content = f\" method: {method_name} ,processed time:{process_time}, from start time: {start_time} received at {datetime.datetime.now()} \\n\"\r\n        reqfile.writelines(content)\r\n    response.headers[\"X-Time-Elapsed\"] = str(process_time)\r\n    return response\r\n\r\n\r\n@app.on_event(\"startup\")\r\nasync def startup_db_client():\r\n    create_async_db()\r\n\r\n\r\n@app.on_event(\"shutdown\")\r\nasync def shutdown_db_client():\r\n    close_async_db()\r\n\r\n    # uvicorn.run(\"users.usersInfo.web.users_app:app\",reload=True,port=8000)\r\n    # uvicorn.run(\"appointments.Appointments.web.appointments_app:app\",reload=True,port=8001)\r\n    # uvicorn.run(\"requests.requestTypes.web.requestTypes_app:app\",reload=True,port=8002)\r\n    # uvicorn.run(\"weekOpening.weekOpening.web.weekOpening_app:app\",reload=True,port=8003)\r\n    #\r\n\r\n\r\nfrom Appointments.web.api import api\r\n\r\nif __name__ == \"__appointments_app__\":\r\n    uvicorn.run(\"Appointments.web.appointments_app:app\", reload=True, port=8002)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/appointments/Appointments/web/appointments_app.py b/appointments/Appointments/web/appointments_app.py
+--- a/appointments/Appointments/web/appointments_app.py	(revision e606d7b6d709a8b81825366be0092110243b532c)
++++ b/appointments/Appointments/web/appointments_app.py	(date 1689855448204)
+@@ -103,5 +103,5 @@
+ 
+ from Appointments.web.api import api
+ 
+-if __name__ == "__appointments_app__":
++if __name__ == "__main__":
+     uvicorn.run("Appointments.web.appointments_app:app", reload=True, port=8002)
