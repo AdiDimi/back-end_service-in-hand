@@ -621,3 +621,21 @@ Log: [7ed1cfa1-ce53-45e5-aa97-10787b21f610: 2023-07-26T13:53:06.496920+0300 - IN
 Log: [7ed1cfa1-ce53-45e5-aa97-10787b21f610: 2023-07-26T13:53:06.501936+0300 - INFO - Successfully accessed /api/4 
 Log: [40bb1b21-ed96-4666-90ac-b84a8be41522: 2023-07-26T13:53:13.794130+0300 - INFO - Request to access /api/4/3 
 Log: [40bb1b21-ed96-4666-90ac-b84a8be41522: 2023-07-26T13:53:13.800132+0300 - INFO - Successfully accessed /api/4/3 
+Log: [a7092cd9-569d-4465-a656-006d09958e4a: 2023-07-26T14:45:13.313004+0300 - INFO - Request to access / 
+Log: [a7092cd9-569d-4465-a656-006d09958e4a: 2023-07-26T14:45:13.318000+0300 - INFO - Successfully accessed / 
+Log: [6783bc65-cbd5-450c-b5d3-b91aa740d6cc: 2023-07-26T14:45:26.488381+0300 - INFO - Request to access /users 
+Log: [6783bc65-cbd5-450c-b5d3-b91aa740d6cc: 2023-07-26T14:45:26.492383+0300 - INFO - Successfully accessed /users 
+Log: [235456b9-31c0-4d2a-8e78-a225ca363afe: 2023-07-26T14:45:54.180660+0300 - INFO - Request to access /Appointments 
+Log: [235456b9-31c0-4d2a-8e78-a225ca363afe: 2023-07-26T14:45:54.186668+0300 - INFO - Successfully accessed /Appointments 
+Log: [43b2f65a-cf36-4c5e-9334-a4cf61af9529: 2023-07-26T14:46:03.413635+0300 - INFO - Request to access /Appointments/ 
+Log: [43b2f65a-cf36-4c5e-9334-a4cf61af9529: 2023-07-26T14:46:03.416637+0300 - INFO - Successfully accessed /Appointments/ 
+Log: [43f261bb-c8eb-404b-b0bd-6b2d8849ffd4: 2023-07-26T14:46:27.348560+0300 - INFO - Request to access /weekOpening 
+Log: [43f261bb-c8eb-404b-b0bd-6b2d8849ffd4: 2023-07-26T14:46:27.355637+0300 - INFO - Successfully accessed /weekOpening 
+Log: [0d00b308-41dc-479f-9c86-a65efaf32078: 2023-07-26T14:48:39.903375+0300 - INFO - Request to access /weekOpening 
+Log: [0d00b308-41dc-479f-9c86-a65efaf32078: 2023-07-26T14:48:39.909374+0300 - INFO - Successfully accessed /weekOpening 
+Log: [717a2214-afaf-47d0-84a9-e4bd4f0f4ab2: 2023-07-26T14:48:44.423427+0300 - INFO - Request to access /weekOpenings 
+Log: [717a2214-afaf-47d0-84a9-e4bd4f0f4ab2: 2023-07-26T14:48:44.427427+0300 - INFO - Successfully accessed /weekOpenings 
+Log: [29e63c4f-0bda-46db-8a2c-01285bae8d48: 2023-07-26T14:48:55.427115+0300 - INFO - Request to access /api/weekOpening 
+Log: [29e63c4f-0bda-46db-8a2c-01285bae8d48: 2023-07-26T14:48:55.433116+0300 - INFO - Successfully accessed /api/weekOpening 
+Log: [ea0ce73c-08dc-487d-9183-6f2bcb49f24e: 2023-07-26T14:49:15.021671+0300 - INFO - Request to access /api/appointments 
+Log: [ea0ce73c-08dc-487d-9183-6f2bcb49f24e: 2023-07-26T14:49:15.027656+0300 - INFO - Successfully accessed /api/appointments 

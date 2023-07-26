@@ -18,16 +18,18 @@ from weekOpening.web.api.schemas import (
 
 
 @app.get(
-    "/weekOpenings",
+    "/weekOpenings/{cod_unit}",
     status_code=status.HTTP_200_OK,
     response_model=CreateWeekOpeningsSchema,
 )
 # @inject
-async def get_weekOpenings(dbCollection=Depends(create_db_collections)):
+async def get_weekOpenings(
+    dbCollection=Depends(create_db_collections), cod_unit: int = 5
+):
     # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
     try:
         repo: weekOpeningRepository = weekOpeningRepository(dbCollection)
-        respnse = await repo.get_week_opening()
+        respnse = await repo.get_week_opening(cod_unit)
         if respnse is not None:
             return respnse
     except RequestTypeNotFoundError:

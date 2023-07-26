@@ -8,8 +8,8 @@ class weekOpeningRepository:
     def __init__(self, dbCollection):
         self.dbCollection = dbCollection
 
-    async def get_week_opening(self) -> GetWeekOpeningUnitModel:
-        cursor = self.dbCollection.find_one({"codUnit": 5})
+    async def get_week_opening(self, codUnit: int = 5) -> GetWeekOpeningUnitModel:
+        cursor = self.dbCollection.find_one({"codUnit": codUnit})
         respnse = await cursor
         # .to_list(length=None)
         if respnse is not None:
