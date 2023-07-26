@@ -5,11 +5,12 @@ from weekOpening.repository.models import GetWeekOpeningModel, GetWeekOpeningUni
 
 
 class weekOpeningRepository:
-    def __init__(self, dbCollection):
+    def __init__(self, dbCollection, cod_unit):
         self.dbCollection = dbCollection
+        self.cod_unit = cod_unit
 
     async def get_week_opening(self) -> GetWeekOpeningUnitModel:
-        cursor = self.dbCollection.find_one({"codUnit": 5})
+        cursor = self.dbCollection.find_one({"codUnit": self.cod_unit})
         respnse = await cursor
         # .to_list(length=None)
         if respnse is not None:

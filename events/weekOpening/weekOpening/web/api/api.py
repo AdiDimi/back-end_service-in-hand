@@ -18,15 +18,15 @@ from weekOpening.web.api.schemas import (
 
 
 @app.get(
-    "/weekOpenings",
+    "/{cod_unit}/weekOpenings",
     status_code=status.HTTP_200_OK,
     response_model=CreateWeekOpeningsSchema,
 )
 # @inject
-async def get_weekOpenings(dbCollection=Depends(create_db_collections)):
+async def get_weekOpenings(cod_unit: int, dbCollection=Depends(create_db_collections)):
     # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
     try:
-        repo: weekOpeningRepository = weekOpeningRepository(dbCollection)
+        repo: weekOpeningRepository = weekOpeningRepository(dbCollection, cod_unit=cod_unit)
         respnse = await repo.get_week_opening()
         if respnse is not None:
             return respnse
@@ -42,7 +42,7 @@ async def get_weekOpenings(dbCollection=Depends(create_db_collections)):
 )
 # @inject
 async def put_weekOpenings(
-    weekOpening: CreateWeekOpeningsSchema, dbCollection=Depends(create_db_collections)
+        weekOpening: CreateWeekOpeningsSchema, dbCollection=Depends(create_db_collections)
 ):
     # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
     try:

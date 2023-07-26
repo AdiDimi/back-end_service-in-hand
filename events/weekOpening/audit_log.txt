@@ -1,3 +1,18 @@
 Error message:Not Found status code:404 received at 2023-05-11 14:59:45.322632Error message:Not Found status code:404 received at 2023-05-11 15:11:55.924312Error message:Not Found status code:404 received at 2023-05-14 11:49:03.852182 
 GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-05-17 14:45:19.887571 
 GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-05-17 14:45:41.920378 
+RequestValidationError - message:1 validation error for Request
+body
+  field required (type=value_error.missing) status code:400 received at 2023-07-26 11:34:17.207701 
+RequestValidationError - message:1 validation error for Request
+body
+  field required (type=value_error.missing) status code:400 received at 2023-07-26 11:34:27.299469 
+RequestValidationError - message:1 validation error for Request
+body
+  field required (type=value_error.missing) status code:400 received at 2023-07-26 11:34:31.702480 
+RequestValidationError - message:1 validation error for Request
+body
+  field required (type=value_error.missing) status code:400 received at 2023-07-26 11:35:29.530383 
+RequestValidationError - message:1 validation error for Request
+body
+  value is not a valid dict (type=type_error.dict) status code:400 received at 2023-07-26 11:39:20.280169 
