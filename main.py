@@ -9,6 +9,7 @@ from gateway.api_router import (
     RedirectUsersServiceException,
     RedirectWeekOpeningServiceException,
     RedirectGeneralSettingsServiceException,
+    RedirectWeekOpeningWithParamException,
 )
 from controller import service_in_hand
 
@@ -65,6 +66,17 @@ def exception_handler_student(
     request: Request, exc: RedirectWeekOpeningServiceException
 ) -> Response:
     return RedirectResponse(url="http://44.211.49.38:8004/weekOpenings")
+
+
+@app.exception_handler(RedirectWeekOpeningWithParamException)
+def exception_handler_student(
+    request: Request, exc: RedirectWeekOpeningWithParamException
+) -> Response:
+    get_param = request.path_params["get_param"]
+    if get_param is not None and get_param != "none":
+        return RedirectResponse(
+            url="http://44.211.49.38:8004/weekOpenings/" + get_param
+        )
 
 
 @app.exception_handler(RedirectRequestTypesServiceException)
