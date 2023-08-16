@@ -51,9 +51,9 @@ class LogisticRequestModel(MongoBaseModel):
     remarks: str = Field(...)
     requestItems: conlist(LogisticItemModel)
 
-    @validator("requestDate", pre=True)
-    def requestDate_datetime(cls, value):
-        return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
+    # @validator("requestDate", pre=True)
+    # def requestDate_datetime(cls, value):
+    #     return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
 
     def dict(self):
         return {
@@ -93,9 +93,9 @@ class MaintenanceRequestModel(MongoBaseModel):
     optDate2: str = Field(...)
     optDate3: str = Field(...)
 
-    @validator("requestDate", pre=True)
-    def requestDate_datetime(cls, value):
-        return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
+    # @validator("requestDate", pre=True)
+    # def requestDate_datetime(cls, value):
+    #     return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
 
     def dict(self):
         return {
@@ -131,7 +131,7 @@ class QualificationRequestModel(MongoBaseModel):
     codRequestType: Literal[2]
     HandleUnit: str = Field(...)
     codUnit: Optional[int] = 0
-    requestDate: date = "1900-01-01T00:00:00"
+    requestDate: str = "1900-01-01T00:00:00"
     status: str = Field(...)
     contactMan: str = Field(...)
     telephone: str = Field(...)
@@ -141,9 +141,9 @@ class QualificationRequestModel(MongoBaseModel):
     optDate2: str = Field(...)
     optDate3: str = Field(...)
 
-    @validator("requestDate", pre=True)
-    def requestDate_datetime(cls, value):
-        return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
+    # @validator("requestDate", pre=True)
+    # def requestDate_datetime(cls, value):
+    #     return datetime.datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
 
     def dict(self):
         return {

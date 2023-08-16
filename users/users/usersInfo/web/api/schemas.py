@@ -1,4 +1,4 @@
-from datetime import date, datetime
+# from datetime import date, datetime
 from enum import Enum
 from typing import List, Literal, Optional
 from pydantic import BaseModel, Extra, Field, validator
@@ -26,14 +26,14 @@ class LogisticRequestSchema(BaseModel):
     codRequestType: Literal[1]
     HandleUnit: str
     codUnit: Optional[int] = 0
-    requestDate: Optional[date] = "1900-01-01T00:00"
+    requestDate: Optional[str] = "1900-01-01T00:00"
     status: str
     remarks: str
     requestItems: List[LogisticItemSchema]
 
-    @validator("requestDate", pre=True)
-    def requestDate_datetime(cls, value):
-        return datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
+    # @validator("requestDate", pre=True)
+    # def requestDate_datetime(cls, value):
+    #     return datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
 
 
 class MaintenanceRequestSchema(BaseModel):
@@ -41,7 +41,7 @@ class MaintenanceRequestSchema(BaseModel):
     codRequestType: Literal[4]
     HandleUnit: str
     codUnit: Optional[int] = 0
-    requestDate: Optional[date] = "1900-01-01T00:00"
+    requestDate: Optional[str] = "1900-01-01T00:00"
     status: str
     unitName: str
     target: str
@@ -61,9 +61,9 @@ class MaintenanceRequestSchema(BaseModel):
     optDate2: str
     optDate3: str
 
-    @validator("requestDate", pre=True)
-    def requestDate_datetime(cls, value):
-        return datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
+    # @validator("requestDate", pre=True)
+    # def requestDate_datetime(cls, value):
+    #     return datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
 
 
 class QualificationRequestSchema(BaseModel):
@@ -71,7 +71,7 @@ class QualificationRequestSchema(BaseModel):
     codRequestType: Literal[2]
     HandleUnit: str
     codUnit: Optional[int] = 0
-    requestDate: Optional[date] = "1900-01-01T00:00"
+    requestDate: Optional[str] = "1900-01-01T00:00"
     status: str
     contactMan: str
     telephone: str
@@ -81,9 +81,9 @@ class QualificationRequestSchema(BaseModel):
     optDate2: str = ""
     optDate3: str = ""
 
-    @validator("requestDate", pre=True)
-    def requestDate_datetime(cls, value):
-        return datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
+    # @validator("requestDate", pre=True)
+    # def requestDate_datetime(cls, value):
+    #     return datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f%z")
 
 
 class UserRequestSchema(BaseModel):

@@ -41,7 +41,7 @@ async def get_requestTypes(dbCollection=Depends(create_db_collections)):
 )
 # @inject
 async def put_requestTypes(
-    usrInfo: GetUserRequestSchema = Body(...),
+    usrInfo=Body(...),
     dbCollection=Depends(create_db_collections),
 ):
     # repo:requestTypesRepository=Depends(Provide[requestTypesContainer.requestTypesService])):
