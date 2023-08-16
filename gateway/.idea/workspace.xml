@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6738ea19-01c0-4aa4-8562-658e76893a22" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Update_at_25_07_2023_16_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/shelf/Uncommitted_changes_before_Update_at_25_07_2023_16_37__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Settings/generalSettings/request_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Settings/generalSettings/request_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../appointments/Appointments/web/appointments_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../appointments/Appointments/web/appointments_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../appointments/Appointments/web/audit_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../appointments/Appointments/web/audit_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../appointments/Appointments/web/request_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../appointments/Appointments/web/request_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../events/weekOpening/request_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../events/weekOpening/request_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../events/weekOpening/weekOpening/web/api/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/../events/weekOpening/weekOpening/web/api/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/users/audit_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../users/users/audit_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../users/users/request_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../users/users/request_log.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2T7EKs6x6Fye8knxfMlRQAQuG96" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6738ea19-01c0-4aa4-8562-658e76893a22" name="Changes" comment="" />
+      <created>1690385658324</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1690385658324</updated>
+    </task>
+    <servers />
+  </component>
+</project>

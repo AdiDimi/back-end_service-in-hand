@@ -41,7 +41,8 @@ class usersRepository:
 
     async def update_user_info(self, usrInfo: GeteUserRequestModel) -> bool:
         cursor = self.dbCollection.update_one(
-            {"userID": usrInfo.userID}, {"$set": {"userRequests": usrInfo.userRequests}}
+            {"userID": usrInfo["userID"]},
+            {"$set": {"userRequests": usrInfo["userRequests"]}},
         )
         respnse = await cursor
         # .to_list(length=None)

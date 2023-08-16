@@ -9,8 +9,13 @@ class weekOpeningRepository:
         self.dbCollection = dbCollection
         self.cod_unit = cod_unit
 
+<<<<<<< HEAD
     async def get_week_opening(self) -> GetWeekOpeningUnitModel:
         cursor = self.dbCollection.find_one({"codUnit": self.cod_unit})
+=======
+    async def get_week_opening(self, codUnit: int = 5) -> GetWeekOpeningUnitModel:
+        cursor = self.dbCollection.find_one({"codUnit": codUnit})
+>>>>>>> origin/main
         respnse = await cursor
         # .to_list(length=None)
         if respnse is not None:

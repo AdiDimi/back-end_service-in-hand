@@ -4,3 +4,63 @@ GlobalStarletteHTTPException - message:Not Found status code:404 received at 202
 GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-05-30 17:24:32.158272 
 GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-06-08 14:34:05.286420 
 GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-06-08 14:34:05.872623 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-08-15 16:20:51.047610 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-08-15 16:20:51.527653 
+GlobalStarletteHTTPException - message:Method Not Allowed status code:405 received at 2023-08-15 16:28:22.897192 
+RequestValidationError - message:8 validation errors for Request
+body -> userRequests -> 0 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-05-12' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 1 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-05-12' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 2 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-05-12' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 3 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-05-12' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 4 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-05-12' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 5 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-05-12' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 6 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-03-12' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 7 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-03-12' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error) status code:400 received at 2023-08-15 16:29:45.279190 
+RequestValidationError - message:8 validation errors for Request
+body -> userRequests -> 0 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-05-12 00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 1 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-05-12 00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 2 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-05-12 00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 3 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-05-12 00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 4 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-05-12' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 5 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-05-12 00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 6 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-03-12 00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 7 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-03-12 00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error) status code:400 received at 2023-08-15 16:52:00.846177 
+RequestValidationError - message:8 validation errors for Request
+body -> userRequests -> 0 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-05-12T00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 1 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-05-12T00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 2 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-05-12 00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 3 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-05-12T00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 4 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-03-12T00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 5 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-05-12 00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 6 -> __root__ -> QualificationRequestSchema -> requestDate
+  time data '2023-03-12T00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error)
+body -> userRequests -> 7 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-03-12T00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error) status code:400 received at 2023-08-15 16:54:56.825318 
+RequestValidationError - message:1 validation error for Request
+body -> userRequests -> 4 -> __root__ -> LogisticRequestSchema -> requestDate
+  time data '2023-03-12T00:00:00' does not match format '%Y-%m-%dT%H:%M:%S.%f%z' (type=value_error) status code:400 received at 2023-08-15 16:59:39.064997 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-08-15 17:09:00.572749 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-08-16 10:07:02.357525 
+GlobalStarletteHTTPException - message:Not Found status code:404 received at 2023-08-16 10:07:02.457529 

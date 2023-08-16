@@ -497,3 +497,145 @@ Log: [481afcd4-2965-4f11-b207-9e4bf8de9418: 2023-07-20T14:54:51.047348+0300 - IN
 Log: [481afcd4-2965-4f11-b207-9e4bf8de9418: 2023-07-20T14:54:51.054345+0300 - INFO - Successfully accessed /service_in_hand/2 
 Log: [7a9e5d77-e548-4444-a2f1-0aea099b50c8: 2023-07-20T14:56:51.089976+0300 - INFO - Request to access /service_in_hand/1 
 Log: [7a9e5d77-e548-4444-a2f1-0aea099b50c8: 2023-07-20T14:56:51.216095+0300 - INFO - Successfully accessed /service_in_hand/1 
+Log: [057cb9de-2cb3-4b8d-8187-e633e65dd0a6: 2023-07-26T12:59:43.181090+0300 - INFO - Request to access / 
+Log: [057cb9de-2cb3-4b8d-8187-e633e65dd0a6: 2023-07-26T12:59:43.235079+0300 - INFO - Successfully accessed / 
+Log: [b3306d10-c43d-4025-b420-b22f7dfe3dac: 2023-07-26T13:00:41.553948+0300 - INFO - Request to access /api/4 
+Log: [b3306d10-c43d-4025-b420-b22f7dfe3dac: 2023-07-26T13:00:41.560959+0300 - INFO - Successfully accessed /api/4 
+Log: [cd0312bf-0f86-4507-8a0f-e024cfa83ec1: 2023-07-26T13:00:54.805308+0300 - INFO - Request to access /api/2 
+Log: [cd0312bf-0f86-4507-8a0f-e024cfa83ec1: 2023-07-26T13:00:54.808308+0300 - INFO - Successfully accessed /api/2 
+Log: [145dada2-2fb3-4fb6-b0f3-c5a889e866c0: 2023-07-26T13:01:13.360359+0300 - INFO - Request to access /api/ 
+Log: [145dada2-2fb3-4fb6-b0f3-c5a889e866c0: 2023-07-26T13:01:13.364358+0300 - INFO - Successfully accessed /api/ 
+Log: [b46d74c6-e07d-434a-b6ad-06ff09538f0c: 2023-07-26T13:01:20.372838+0300 - INFO - Request to access /api/4/4 
+Log: [b46d74c6-e07d-434a-b6ad-06ff09538f0c: 2023-07-26T13:01:20.378835+0300 - INFO - Successfully accessed /api/4/4 
+Log: [85c3cec0-fc7e-480f-a018-ec7874ce8315: 2023-07-26T13:01:54.693907+0300 - INFO - Request to access /api/4 
+Log: [85c3cec0-fc7e-480f-a018-ec7874ce8315: 2023-07-26T13:01:54.697905+0300 - INFO - Successfully accessed /api/4 
+Log: [32d83f2f-35e9-4bc9-849c-2b482711e900: 2023-07-26T13:02:05.814662+0300 - INFO - Request to access /api/4/ 
+Log: [32d83f2f-35e9-4bc9-849c-2b482711e900: 2023-07-26T13:02:05.817662+0300 - INFO - Successfully accessed /api/4/ 
+Log: [0ba7a17d-ea78-4c7b-b804-d9772c35a8db: 2023-07-26T13:02:05.826776+0300 - INFO - Request to access /api/4 
+Log: [0ba7a17d-ea78-4c7b-b804-d9772c35a8db: 2023-07-26T13:02:05.832669+0300 - INFO - Successfully accessed /api/4 
+Log: [8d5f48af-a6e5-4277-ab11-4dfa4471fe66: 2023-07-26T13:14:25.163778+0300 - INFO - Request to access /api/4 
+Log: [8d5f48af-a6e5-4277-ab11-4dfa4471fe66: 2023-07-26T13:14:25.170780+0300 - INFO - Successfully accessed /api/4 
+Log: [c2d0ff6a-9d1b-4462-88dc-b3980a7aa844: 2023-07-26T13:14:32.482202+0300 - INFO - Request to access /api/4/ 
+Log: [c2d0ff6a-9d1b-4462-88dc-b3980a7aa844: 2023-07-26T13:14:32.487573+0300 - INFO - Successfully accessed /api/4/ 
+Log: [ee207e86-12fe-4e0e-9522-67b6496c3f85: 2023-07-26T13:14:32.498044+0300 - INFO - Request to access /api/4 
+Log: [ee207e86-12fe-4e0e-9522-67b6496c3f85: 2023-07-26T13:14:32.503631+0300 - INFO - Successfully accessed /api/4 
+Log: [3819715b-f6bc-4cff-8783-594a56574773: 2023-07-26T13:15:19.502726+0300 - INFO - Request to access /api/4 
+Log: [3819715b-f6bc-4cff-8783-594a56574773: 2023-07-26T13:15:19.506728+0300 - INFO - Successfully accessed /api/4 
+Log: [cb38ba3f-c409-4973-9d34-bd91bef2e81c: 2023-07-26T13:15:25.891152+0300 - INFO - Request to access /api/ 
+Log: [cb38ba3f-c409-4973-9d34-bd91bef2e81c: 2023-07-26T13:15:25.895986+0300 - INFO - Successfully accessed /api/ 
+Log: [60c99ae8-0c18-41d7-a1a9-b55c8cc5c0ec: 2023-07-26T13:15:33.324186+0300 - INFO - Request to access /api/4/ 
+Log: [60c99ae8-0c18-41d7-a1a9-b55c8cc5c0ec: 2023-07-26T13:15:33.327186+0300 - INFO - Successfully accessed /api/4/ 
+Log: [64a41ef3-bfa6-47ca-906d-a1920ac45205: 2023-07-26T13:15:33.341192+0300 - INFO - Request to access /api/4 
+Log: [64a41ef3-bfa6-47ca-906d-a1920ac45205: 2023-07-26T13:15:33.348195+0300 - INFO - Successfully accessed /api/4 
+Log: [8756ae23-a961-4783-8ffb-20e261f0f0ed: 2023-07-26T13:15:39.183510+0300 - INFO - Request to access /api/4/5 
+Log: [8756ae23-a961-4783-8ffb-20e261f0f0ed: 2023-07-26T13:15:39.189301+0300 - INFO - Successfully accessed /api/4/5 
+Log: [b356b357-fe03-45f7-b300-bf2e48dbdc71: 2023-07-26T13:17:14.726344+0300 - INFO - Request to access /api/4 
+Log: [b356b357-fe03-45f7-b300-bf2e48dbdc71: 2023-07-26T13:17:14.730345+0300 - INFO - Successfully accessed /api/4 
+Log: [c2a14cb0-20f5-4fde-8b1f-8905ac75942c: 2023-07-26T13:17:21.684541+0300 - INFO - Request to access /api/3 
+Log: [c2a14cb0-20f5-4fde-8b1f-8905ac75942c: 2023-07-26T13:17:21.689493+0300 - INFO - Successfully accessed /api/3 
+Log: [1d5f0916-ab7d-455e-b5b0-92f1404ffe24: 2023-07-26T13:17:49.939561+0300 - INFO - Request to access /api/3 
+Log: [1d5f0916-ab7d-455e-b5b0-92f1404ffe24: 2023-07-26T13:17:49.947564+0300 - INFO - Successfully accessed /api/3 
+Log: [2eb43ad7-7e1b-4dbb-abe6-e19879253c06: 2023-07-26T13:18:09.090850+0300 - INFO - Request to access /api/4 
+Log: [2eb43ad7-7e1b-4dbb-abe6-e19879253c06: 2023-07-26T13:18:09.098852+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [2eb43ad7-7e1b-4dbb-abe6-e19879253c06: 2023-07-26T13:18:09.101854+0300 - INFO - Successfully accessed /api/4 
+Log: [63ffbac2-4040-4692-acfb-0d48a5f54039: 2023-07-26T13:18:25.352126+0300 - INFO - Request to access /api/4/ 
+Log: [63ffbac2-4040-4692-acfb-0d48a5f54039: 2023-07-26T13:18:25.356125+0300 - INFO - Successfully accessed /api/4/ 
+Log: [3c9c421c-85a1-4dfc-aedf-6c61ab8a4fe8: 2023-07-26T13:18:25.366124+0300 - INFO - Request to access /api/4 
+Log: [3c9c421c-85a1-4dfc-aedf-6c61ab8a4fe8: 2023-07-26T13:18:25.374131+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [3c9c421c-85a1-4dfc-aedf-6c61ab8a4fe8: 2023-07-26T13:18:25.379128+0300 - INFO - Successfully accessed /api/4 
+Log: [e4bd67ab-3e18-4b22-a8c3-e918a15ac7b2: 2023-07-26T13:18:32.284078+0300 - INFO - Request to access /api/2 
+Log: [e4bd67ab-3e18-4b22-a8c3-e918a15ac7b2: 2023-07-26T13:18:32.289079+0300 - INFO - Successfully accessed /api/2 
+Log: [883adadc-24d9-47fa-b0ab-82e019b8c695: 2023-07-26T13:19:06.141271+0300 - INFO - Request to access /api/2 
+Log: [883adadc-24d9-47fa-b0ab-82e019b8c695: 2023-07-26T13:19:06.146275+0300 - INFO - Successfully accessed /api/2 
+Log: [7029ca63-89a9-4dc5-95fc-aae26690ac30: 2023-07-26T13:23:29.256644+0300 - INFO - Request to access /api/4 
+Log: [7029ca63-89a9-4dc5-95fc-aae26690ac30: 2023-07-26T13:23:29.263646+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [7029ca63-89a9-4dc5-95fc-aae26690ac30: 2023-07-26T13:23:29.268704+0300 - INFO - Successfully accessed /api/4 
+Log: [1f4b7ff1-a4c2-4fdb-b3ff-24e28cf91791: 2023-07-26T13:23:36.503279+0300 - INFO - Request to access /api/4/3 
+Log: [1f4b7ff1-a4c2-4fdb-b3ff-24e28cf91791: 2023-07-26T13:23:36.511297+0300 - INFO - Successfully accessed /api/4/3 
+Log: [1cf0b933-26a4-4a83-b235-1706e70672df: 2023-07-26T13:23:55.322475+0300 - INFO - Request to access /api/4 
+Log: [1cf0b933-26a4-4a83-b235-1706e70672df: 2023-07-26T13:23:55.329487+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [1cf0b933-26a4-4a83-b235-1706e70672df: 2023-07-26T13:23:55.332474+0300 - INFO - Successfully accessed /api/4 
+Log: [a36ce8f2-daa7-4062-b23d-9c9ea3a85d8b: 2023-07-26T13:24:00.350573+0300 - INFO - Request to access /api/2 
+Log: [a36ce8f2-daa7-4062-b23d-9c9ea3a85d8b: 2023-07-26T13:24:00.355573+0300 - INFO - Successfully accessed /api/2 
+Log: [3cf3fc7f-944a-4228-a07e-29eb7860e524: 2023-07-26T13:26:21.666202+0300 - INFO - Request to access /api/4 
+Log: [3cf3fc7f-944a-4228-a07e-29eb7860e524: 2023-07-26T13:26:21.672883+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [3cf3fc7f-944a-4228-a07e-29eb7860e524: 2023-07-26T13:26:21.674884+0300 - INFO - Successfully accessed /api/4 
+Log: [44cfe873-bab0-41c5-bfb8-cb23882bd8d9: 2023-07-26T13:26:27.429011+0300 - INFO - Request to access /api/4/ 
+Log: [44cfe873-bab0-41c5-bfb8-cb23882bd8d9: 2023-07-26T13:26:27.432025+0300 - INFO - Successfully accessed /api/4/ 
+Log: [9764b90d-e313-4c9a-a2f8-aca4351f4b45: 2023-07-26T13:26:27.443012+0300 - INFO - Request to access /api/4 
+Log: [9764b90d-e313-4c9a-a2f8-aca4351f4b45: 2023-07-26T13:26:27.453014+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [9764b90d-e313-4c9a-a2f8-aca4351f4b45: 2023-07-26T13:26:27.458019+0300 - INFO - Successfully accessed /api/4 
+Log: [18b822ec-c9f2-414d-95ff-9fff550806fd: 2023-07-26T13:26:32.367620+0300 - INFO - Request to access /api/4/3 
+Log: [18b822ec-c9f2-414d-95ff-9fff550806fd: 2023-07-26T13:26:32.374476+0300 - INFO - Successfully accessed /api/4/3 
+Log: [53c0ec28-00d6-47c3-9c25-5fe83dd12092: 2023-07-26T13:27:35.229224+0300 - INFO - Request to access /api/4 
+Log: [53c0ec28-00d6-47c3-9c25-5fe83dd12092: 2023-07-26T13:27:35.236327+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [53c0ec28-00d6-47c3-9c25-5fe83dd12092: 2023-07-26T13:27:35.240344+0300 - INFO - Successfully accessed /api/4 
+Log: [738ef589-4827-4038-b235-25d0ac4ab9c3: 2023-07-26T13:29:28.373890+0300 - INFO - Request to access /api/4 
+Log: [738ef589-4827-4038-b235-25d0ac4ab9c3: 2023-07-26T13:29:28.379888+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [738ef589-4827-4038-b235-25d0ac4ab9c3: 2023-07-26T13:29:28.381908+0300 - INFO - Successfully accessed /api/4 
+Log: [60e8f2b1-74f3-4026-b0be-4ea63536bc99: 2023-07-26T13:29:39.468210+0300 - INFO - Request to access /api/3 
+Log: [60e8f2b1-74f3-4026-b0be-4ea63536bc99: 2023-07-26T13:29:39.474162+0300 - INFO - Successfully accessed /api/3 
+Log: [8c679e27-f223-40a6-93a8-eda3e2002f1d: 2023-07-26T13:29:56.763332+0300 - INFO - Request to access /api/4 
+Log: [8c679e27-f223-40a6-93a8-eda3e2002f1d: 2023-07-26T13:29:56.768321+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [8c679e27-f223-40a6-93a8-eda3e2002f1d: 2023-07-26T13:29:56.771320+0300 - INFO - Successfully accessed /api/4 
+Log: [7c1469d9-65b2-4657-b512-0405f20fa5d1: 2023-07-26T13:30:09.064665+0300 - INFO - Request to access /api/3/3 
+Log: [7c1469d9-65b2-4657-b512-0405f20fa5d1: 2023-07-26T13:30:09.070665+0300 - INFO - Successfully accessed /api/3/3 
+Log: [5cc70661-5c19-4808-a609-afb73a685307: 2023-07-26T13:31:42.671023+0300 - INFO - Request to access /api/4 
+Log: [5cc70661-5c19-4808-a609-afb73a685307: 2023-07-26T13:31:42.675447+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [5cc70661-5c19-4808-a609-afb73a685307: 2023-07-26T13:31:42.678452+0300 - INFO - Successfully accessed /api/4 
+Log: [ed04ea37-dc49-4ec9-a95a-301e621000d1: 2023-07-26T13:32:11.658765+0300 - INFO - Request to access /api/4 
+Log: [ed04ea37-dc49-4ec9-a95a-301e621000d1: 2023-07-26T13:32:11.667763+0300 - INFO - Successfully accessed /api/4 
+Log: [8748f6f5-5a8e-4560-865b-97e9bb7650d5: 2023-07-26T13:41:06.274764+0300 - INFO - Request to access /api/4 
+Log: [8748f6f5-5a8e-4560-865b-97e9bb7650d5: 2023-07-26T13:41:06.280738+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [8748f6f5-5a8e-4560-865b-97e9bb7650d5: 2023-07-26T13:41:06.284741+0300 - INFO - Successfully accessed /api/4 
+Log: [78892ede-abb1-4fd6-ae81-b342ec86e739: 2023-07-26T13:41:15.026052+0300 - INFO - Request to access /api/4/5 
+Log: [78892ede-abb1-4fd6-ae81-b342ec86e739: 2023-07-26T13:41:15.031053+0300 - INFO - Successfully accessed /api/4/5 
+Log: [770f4ae7-caef-4e5b-a06a-2a0d198c0c3e: 2023-07-26T13:45:39.734086+0300 - INFO - Request to access /api/4 
+Log: [770f4ae7-caef-4e5b-a06a-2a0d198c0c3e: 2023-07-26T13:45:39.739088+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [770f4ae7-caef-4e5b-a06a-2a0d198c0c3e: 2023-07-26T13:45:39.742090+0300 - INFO - Successfully accessed /api/4 
+Log: [e3b5877b-8b49-4c02-8859-63c73f07edbf: 2023-07-26T13:45:42.726851+0300 - INFO - Request to access /api/4 
+Log: [e3b5877b-8b49-4c02-8859-63c73f07edbf: 2023-07-26T13:45:42.732835+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [e3b5877b-8b49-4c02-8859-63c73f07edbf: 2023-07-26T13:45:42.736831+0300 - INFO - Successfully accessed /api/4 
+Log: [cd7f1d37-b89f-4d89-8ce1-46957e8b2227: 2023-07-26T13:45:46.913923+0300 - INFO - Request to access /api/4/4 
+Log: [cd7f1d37-b89f-4d89-8ce1-46957e8b2227: 2023-07-26T13:45:46.918932+0300 - INFO - Successfully accessed /api/4/4 
+Log: [b06887bb-1791-4a75-bd6a-a9962eb08d2e: 2023-07-26T13:46:13.154161+0300 - INFO - Request to access /api/4 
+Log: [b06887bb-1791-4a75-bd6a-a9962eb08d2e: 2023-07-26T13:46:13.161143+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [b06887bb-1791-4a75-bd6a-a9962eb08d2e: 2023-07-26T13:46:13.165142+0300 - INFO - Successfully accessed /api/4 
+Log: [bba00b1e-f085-461f-849a-ced6a6f4fd2e: 2023-07-26T13:46:18.825275+0300 - INFO - Request to access /api/4/3 
+Log: [bba00b1e-f085-461f-849a-ced6a6f4fd2e: 2023-07-26T13:46:18.830276+0300 - ERROR - Request to /api/4/3 failed: {ex} 
+Log: [bba00b1e-f085-461f-849a-ced6a6f4fd2e: 2023-07-26T13:46:18.833274+0300 - INFO - Successfully accessed /api/4/3 
+Log: [8824c565-7739-4be7-b120-7d11582315bd: 2023-07-26T13:47:16.176564+0300 - INFO - Request to access /api/4 
+Log: [8824c565-7739-4be7-b120-7d11582315bd: 2023-07-26T13:47:16.183564+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [8824c565-7739-4be7-b120-7d11582315bd: 2023-07-26T13:47:16.188565+0300 - INFO - Successfully accessed /api/4 
+Log: [e17371f4-5770-4797-9428-e05bd051ab2c: 2023-07-26T13:47:24.441126+0300 - INFO - Request to access /api/4/5 
+Log: [e17371f4-5770-4797-9428-e05bd051ab2c: 2023-07-26T13:47:24.448131+0300 - ERROR - Request to /api/4/5 failed: {ex} 
+Log: [e17371f4-5770-4797-9428-e05bd051ab2c: 2023-07-26T13:47:24.452140+0300 - INFO - Successfully accessed /api/4/5 
+Log: [4356bdcd-de4e-47a5-911b-477a1b538719: 2023-07-26T13:51:16.190136+0300 - INFO - Request to access /api/4 
+Log: [4356bdcd-de4e-47a5-911b-477a1b538719: 2023-07-26T13:51:16.197138+0300 - ERROR - Request to /api/4 failed: {ex} 
+Log: [4356bdcd-de4e-47a5-911b-477a1b538719: 2023-07-26T13:51:16.201138+0300 - INFO - Successfully accessed /api/4 
+Log: [a74cca20-eeca-4121-95d7-dca9a56f875e: 2023-07-26T13:51:23.085139+0300 - INFO - Request to access /api/4/5 
+Log: [a74cca20-eeca-4121-95d7-dca9a56f875e: 2023-07-26T13:51:23.090141+0300 - INFO - Successfully accessed /api/4/5 
+Log: [31196ecd-682b-40e1-8000-1a4a7d2bc02f: 2023-07-26T13:52:51.841277+0300 - INFO - Request to access /api/4 
+Log: [31196ecd-682b-40e1-8000-1a4a7d2bc02f: 2023-07-26T13:52:51.850363+0300 - INFO - Successfully accessed /api/4 
+Log: [7ed1cfa1-ce53-45e5-aa97-10787b21f610: 2023-07-26T13:53:06.496920+0300 - INFO - Request to access /api/4 
+Log: [7ed1cfa1-ce53-45e5-aa97-10787b21f610: 2023-07-26T13:53:06.501936+0300 - INFO - Successfully accessed /api/4 
+Log: [40bb1b21-ed96-4666-90ac-b84a8be41522: 2023-07-26T13:53:13.794130+0300 - INFO - Request to access /api/4/3 
+Log: [40bb1b21-ed96-4666-90ac-b84a8be41522: 2023-07-26T13:53:13.800132+0300 - INFO - Successfully accessed /api/4/3 
+Log: [a7092cd9-569d-4465-a656-006d09958e4a: 2023-07-26T14:45:13.313004+0300 - INFO - Request to access / 
+Log: [a7092cd9-569d-4465-a656-006d09958e4a: 2023-07-26T14:45:13.318000+0300 - INFO - Successfully accessed / 
+Log: [6783bc65-cbd5-450c-b5d3-b91aa740d6cc: 2023-07-26T14:45:26.488381+0300 - INFO - Request to access /users 
+Log: [6783bc65-cbd5-450c-b5d3-b91aa740d6cc: 2023-07-26T14:45:26.492383+0300 - INFO - Successfully accessed /users 
+Log: [235456b9-31c0-4d2a-8e78-a225ca363afe: 2023-07-26T14:45:54.180660+0300 - INFO - Request to access /Appointments 
+Log: [235456b9-31c0-4d2a-8e78-a225ca363afe: 2023-07-26T14:45:54.186668+0300 - INFO - Successfully accessed /Appointments 
+Log: [43b2f65a-cf36-4c5e-9334-a4cf61af9529: 2023-07-26T14:46:03.413635+0300 - INFO - Request to access /Appointments/ 
+Log: [43b2f65a-cf36-4c5e-9334-a4cf61af9529: 2023-07-26T14:46:03.416637+0300 - INFO - Successfully accessed /Appointments/ 
+Log: [43f261bb-c8eb-404b-b0bd-6b2d8849ffd4: 2023-07-26T14:46:27.348560+0300 - INFO - Request to access /weekOpening 
+Log: [43f261bb-c8eb-404b-b0bd-6b2d8849ffd4: 2023-07-26T14:46:27.355637+0300 - INFO - Successfully accessed /weekOpening 
+Log: [0d00b308-41dc-479f-9c86-a65efaf32078: 2023-07-26T14:48:39.903375+0300 - INFO - Request to access /weekOpening 
+Log: [0d00b308-41dc-479f-9c86-a65efaf32078: 2023-07-26T14:48:39.909374+0300 - INFO - Successfully accessed /weekOpening 
+Log: [717a2214-afaf-47d0-84a9-e4bd4f0f4ab2: 2023-07-26T14:48:44.423427+0300 - INFO - Request to access /weekOpenings 
+Log: [717a2214-afaf-47d0-84a9-e4bd4f0f4ab2: 2023-07-26T14:48:44.427427+0300 - INFO - Successfully accessed /weekOpenings 
+Log: [29e63c4f-0bda-46db-8a2c-01285bae8d48: 2023-07-26T14:48:55.427115+0300 - INFO - Request to access /api/weekOpening 
+Log: [29e63c4f-0bda-46db-8a2c-01285bae8d48: 2023-07-26T14:48:55.433116+0300 - INFO - Successfully accessed /api/weekOpening 
+Log: [ea0ce73c-08dc-487d-9183-6f2bcb49f24e: 2023-07-26T14:49:15.021671+0300 - INFO - Request to access /api/appointments 
+Log: [ea0ce73c-08dc-487d-9183-6f2bcb49f24e: 2023-07-26T14:49:15.027656+0300 - INFO - Successfully accessed /api/appointments 
