@@ -49,4 +49,4 @@ def add_item(new_data: ItemModel = Body(...)):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app)
+    uvicorn.run(app, port=8006)
