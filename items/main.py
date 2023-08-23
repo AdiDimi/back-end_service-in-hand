@@ -3,7 +3,6 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.responses import Response, JSONResponse
 from pymongo import MongoClient
 import uvicorn
-from typing import List, Optional
 from database.database import *
 from repository.models import *
 
@@ -17,7 +16,7 @@ collection = db[DB_COLLECTION]
 
 @app.get('/',
          response_description="List All items",
-         response_model=List[ItemModel]
+         response_model=ItemsModel
          )
 def get_items():
 
@@ -27,8 +26,8 @@ def get_items():
         document['_id'] = str(document['_id'])
         data.append(document)
 
-    # return {"items": data}
-    return data
+    return {"items": data}
+    # return data
 
 
 @app.post("/add_item",

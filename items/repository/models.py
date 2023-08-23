@@ -1,4 +1,4 @@
-from bson import ObjectId
+from bson import ObjectId, List
 from pydantic import BaseModel, Field
 
 
@@ -35,3 +35,7 @@ class ItemModel(BaseModel):
                 "itemDescription": "מ.ק 18",
             }
         }
+
+
+class ItemsModel(BaseModel):
+    items: List[ItemModel]
