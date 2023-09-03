@@ -6,7 +6,7 @@ import uvicorn
 from database.database import *
 from repository.models import *
 
-app = FastAPI(debug=True)
+app = FastAPI(debug=True, docs_url="/items/docs")
 
 mongo_client = MongoClient(DB_URL, tls=True, tlsAllowInvalidCertificates=True)
 
@@ -14,7 +14,16 @@ db = mongo_client[DB_NAME]
 collection = db[DB_COLLECTION]
 
 
-@app.get('/',
+@app.get(
+    "/",
+    status_code=status.HTTP_200_OK,
+)
+# @inject
+async def get_healthy():
+    return "Healthy"
+
+
+@app.get('/items',
          response_description="List All items",
          response_model=ItemsModel
          )
