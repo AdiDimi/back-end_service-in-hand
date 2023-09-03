@@ -39,7 +39,7 @@ def get_items():
     # return data
 
 
-@app.post("/add_item",
+@app.post("/items",
           response_description="Add Item",
           response_model=ItemModel)
 def add_item(new_data: ItemModel = Body(...)):
